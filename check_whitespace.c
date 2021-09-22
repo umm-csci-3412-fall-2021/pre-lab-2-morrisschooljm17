@@ -47,6 +47,7 @@ char* strip(char* str) {
   result[i-first_non_space] = '\0';
 
   return result;
+
 }
 
 /*
@@ -67,6 +68,10 @@ int is_clean(char* str) {
   // greater than the second.
   result = strcmp(str, cleaned);
 
+  if (strcmp("", cleaned) != 0) {
+    free(cleaned);
+  }
+  
   return result == 0;
 }
 
